@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "emeraldwalk.runonsave": {
+      "commands": [
+        {
+          "match": "compose\\.yaml",
+          "cmd": "scp ${file} root@144.31.56.244:~/projects/first-try/."
+        }
+      ]
+    }
+  }
+}
