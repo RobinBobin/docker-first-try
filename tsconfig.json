@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Type Checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    // Modules
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noUncheckedSideEffectImports": true,
+    "types": ["node"],
+
+    // Emit
+    "noEmitOnError": true,
+    "outDir": "dist",
+
+    // JavaScript Support
+    "checkJs": true,
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+
+    // Language and Environment
+    "target": "es2023",
+
+    // Projects
+    "composite": true,
+
+    // Output Formatting
+    "noErrorTruncation": true,
+
+    // Completeness
+    "skipLibCheck": true
+  },
+  "files": ["eslint.config.ts"],
+  "include": ["eslint", "src/**/*.ts"]
+}
