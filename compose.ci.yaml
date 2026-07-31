@@ -1,0 +1,8 @@
+include:
+  - compose.yaml
+
+services:
+  first-try:
+    build:
+      target: build
+    pull_policy: build
