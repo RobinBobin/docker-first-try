@@ -1,7 +1,7 @@
 FROM node:24-alpine AS base
 WORKDIR /app
 RUN corepack enable && corepack prepare pnpm@11.18.0 --activate
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 FROM base AS common
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \

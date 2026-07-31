@@ -1,0 +1,8 @@
+services:
+  first-try:
+    build:
+      target: dev
+
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
