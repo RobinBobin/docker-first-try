@@ -5,6 +5,7 @@ services:
   first-try:
     build:
       target: dev
+    pull_policy: build
 
     volumes:
       - ./src:/app/src

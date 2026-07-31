@@ -9,12 +9,13 @@ RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
 
 FROM common AS dev
 ENV NODE_ENV=development
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "run:dev"]
 
 FROM common AS build
 COPY . .
-RUN pnpm build
+RUN pnpm build:prod
 RUN pnpm prune --prod
+CMD ["echo", "Prod built."]
 
 FROM node:24-alpine AS prod
 WORKDIR /app
@@ -28,4 +29,4 @@ COPY --chown=node:node --from=build /app/package.json ./
 
 USER node
 
-CMD ["node", "dist/src/index.js"]
+CMD ["node", "--enable-source-maps", "dist/index.js"]

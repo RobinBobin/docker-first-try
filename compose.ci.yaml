@@ -4,5 +4,5 @@ include:
 services:
   first-try:
     build:
-      target: build
+      target: prod
     pull_policy: build

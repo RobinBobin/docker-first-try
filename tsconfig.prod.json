@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "composite": false,
+    "incremental": false,
+    "inlineSourceMap": false,
+    "removeComments": true,
+    "rootDir": "src",
+    "sourceMap": true
+  },
+  "extends": ["./tsconfig"],
+  "files": [],
+  "include": ["src/**/*.ts"]
+}
