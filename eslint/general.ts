@@ -55,7 +55,12 @@ export default defineConfig([
       'max-lines-per-function': ['error', js.maxLinesPerFunction],
       'max-nested-callbacks': 'error',
       'max-statements': ['error', js.maxStatements],
-      'new-cap': 'error',
+      'new-cap': [
+        'error',
+        {
+          capIsNewExceptions: ['Controller', 'Get', 'Injectable', 'Module']
+        }
+      ],
       'no-array-constructor': 'error',
       'no-await-in-loop': 'error',
       'no-bitwise': 'error',
@@ -106,6 +111,7 @@ export default defineConfig([
       'prefer-object-has-own': 'error',
       'prefer-promise-reject-errors': 'error',
       'prefer-template': 'error',
+      radix: 'error',
       'require-atomic-updates': 'error',
       'require-await': 'error',
       'sort-keys': ['error', 'asc', js.sortKeys],
@@ -150,7 +156,15 @@ export default defineConfig([
       '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/prefer-readonly-parameter-types': [
         'error',
-        ts.preferReadonlyParameterTypes
+        {
+          ...ts.preferReadonlyParameterTypes,
+          allow: [
+            {
+              from: 'file',
+              name: 'AppService'
+            }
+          ]
+        }
       ],
       '@typescript-eslint/restrict-template-expressions': [
         'error',
@@ -184,6 +198,17 @@ export default defineConfig([
       // simple-import-sort
       'simple-import-sort/exports': 'error',
       'simple-import-sort/imports': ['error', simpleImportSort.imports]
+    }
+  },
+  {
+    files: ['src/app.module.ts'],
+    rules: {
+      '@typescript-eslint/no-extraneous-class': [
+        'error',
+        {
+          allowEmpty: true
+        }
+      ]
     }
   }
 ])

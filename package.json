@@ -1,7 +1,16 @@
 {
   "author": "Ruben Shalimov",
+  "dependencies": {
+    "@nestjs/common": "^11.1.28",
+    "@nestjs/core": "^11.1.28",
+    "@nestjs/platform-express": "^11.1.28",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@nestjs/cli": "^11.0.24",
+    "@nestjs/schematics": "^11.1.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.13.3",
     "@typescript-eslint/parser": "^8.65.0",
@@ -23,11 +32,12 @@
   "main": "src/index.ts",
   "name": "first-try",
   "packageManager": "pnpm@11.18.0+sha512.33d83c77da82f49fba836925c6f1b841181ec3132b670639bd012f7075f5c7cf634c5f870147c19aae7478fac01df09d8892e880454896edd23ee9b33757563c",
+  "private": true,
   "scripts": {
-    "build:dev": "rimraf dist && tsc",
-    "build:prod": "rimraf dist && tsc -p tsconfig.prod.json",
+    "build:prod": "nest build --path tsconfig.prod.json",
     "prepare": "husky",
-    "run:dev": "tsx watch src/index.ts"
+    "start:debug": "pnpm start:dev --debug",
+    "start:dev": "nest start --watch"
   },
   "type": "module",
   "version": "1.0.0"

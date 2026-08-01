@@ -32,6 +32,8 @@
     "verbatimModuleSyntax": true,
 
     // Language and Environment
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es2023",
 
     // Projects
