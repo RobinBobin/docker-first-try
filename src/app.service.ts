@@ -4,6 +4,6 @@ import { Injectable } from '@nestjs/common'
 export class AppService {
   // eslint-disable-next-line @typescript-eslint/class-methods-use-this
   getHello(): string {
-    return 'Viva, Nest!'
+    return '🎉🎉🎉 Viva, Nest + Docker! 🎉🎉🎉'
   }
 }

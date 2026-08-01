@@ -8,7 +8,5 @@
     "rootDir": "src",
     "sourceMap": true
   },
-  "extends": ["./tsconfig"],
-  "files": [],
-  "include": ["src/**/*.ts"]
+  "extends": ["./tsconfig.dev"]
 }

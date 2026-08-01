@@ -8,8 +8,9 @@ RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
   pnpm install --frozen-lockfile
 
 FROM common AS dev
+COPY tsconfig.json tsconfig.dev.json ./
 ENV NODE_ENV=development
-CMD ["pnpm", "run:dev"]
+CMD ["pnpm", "start:dev"]
 
 FROM common AS build
 COPY . .

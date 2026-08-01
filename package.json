@@ -37,7 +37,7 @@
     "build:prod": "nest build --path tsconfig.prod.json",
     "prepare": "husky",
     "start:debug": "pnpm start:dev --debug",
-    "start:dev": "nest start --watch"
+    "start:dev": "nest start --path tsconfig.dev.json --watch"
   },
   "type": "module",
   "version": "1.0.0"
