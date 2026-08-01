@@ -5,4 +5,3 @@ services:
   first-try:
     build:
       target: prod
-    pull_policy: build

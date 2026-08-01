@@ -15,8 +15,7 @@ CMD ["pnpm", "start:dev"]
 FROM common AS build
 COPY . .
 RUN pnpm build:prod
-RUN pnpm prune --prod
-CMD ["echo", "Prod built."]
+RUN pnpm prune --ignore-scripts --prod
 
 FROM node:24-alpine AS prod
 WORKDIR /app
@@ -30,4 +29,4 @@ COPY --chown=node:node --from=build /app/package.json ./
 
 USER node
 
-CMD ["node", "--enable-source-maps", "dist/index.js"]
+CMD ["node", "--enable-source-maps", "dist/main.js"]
